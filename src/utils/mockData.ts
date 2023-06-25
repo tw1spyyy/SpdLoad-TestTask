@@ -1,5 +1,5 @@
-import { IPost } from "../Components/Home/Tours";
 import { tour1, tour2, tour3 } from "../static";
+import { IPost } from "../types/interfaces";
 
 export const posts: IPost[] = [
 	{

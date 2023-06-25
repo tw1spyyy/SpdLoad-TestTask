@@ -1,28 +1,20 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { IPost } from "./Tours";
 import { AddToFavSvg, DeleteSvg, WhiteHeard } from "../../utils/svgs";
 import { useDispatch, useSelector } from "react-redux";
 import { onAddToFavorites } from "../../store/reducers/favorites";
 import { RootState } from "../../store";
-
-interface Props {
-	tour: IPost;
-	isFavorite?: boolean;
-}
-
-interface ButtonProps {
-	isActive?: boolean;
-}
+import { ButtonProps, Props } from "../../types/interfaces";
 
 export const TourItem = ({ tour, isFavorite = false }: Props) => {
 	const { id, img, title, text } = tour;
+
 	const dispatch = useDispatch();
 
 	const { favorites } = useSelector((state: RootState) => state.favorites);
 
 	const onAddToFav = () => {
-		dispatch(onAddToFavorites({ id, img, title, text }));
+		dispatch(onAddToFavorites(tour));
 	};
 
 	return (

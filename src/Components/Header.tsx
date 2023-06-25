@@ -52,6 +52,7 @@ const Wrapper = styled.div`
 	background: rgba(30, 30, 30, 0.48);
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 	height: 80px;
+	z-index: 3;
 `;
 const Container = styled.div`
 	max-width: 1300px;

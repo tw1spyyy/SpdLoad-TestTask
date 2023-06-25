@@ -1,7 +1,7 @@
 import logo from "./logo.png";
-import top1 from "./top-1.png";
-import top2 from "./top-2.png";
-import top3 from "./top-3.png";
+import top1 from "./top/top-1.png";
+import top2 from "./top/top-2.png";
+import top3 from "./top/top-3.png";
 
 import tour1 from "./tours/1.png";
 import tour2 from "./tours/2.png";

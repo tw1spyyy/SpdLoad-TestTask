@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { TourItem } from "../Home/TourItem";
-import { posts } from "../../utils/mockData";
-import { IPost } from "../Home/Tours";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { onClearAll } from "../../store/reducers/favorites";
+import { IPost } from "../../types/interfaces";
 
 export const FavContainer = () => {
 	const { favorites } = useSelector((state: RootState) => state.favorites);

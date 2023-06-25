@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IPost } from "../../../Components/Home/Tours";
+import { IPost } from "../../../types/interfaces";
 
 interface ProfileState {
 	favorites: IPost[];

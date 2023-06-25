@@ -3,19 +3,8 @@ import { css, styled } from "styled-components";
 import { posts } from "../../utils/mockData";
 import { NextArrow, PrevArrow } from "../../utils/svgs";
 import { TourItem } from "./TourItem";
+import { IArrowButton, IDot, IPost } from "../../types/interfaces";
 
-export interface IPost {
-	id: number;
-	img: string;
-	title: string;
-	text: string;
-}
-interface IDot {
-	isactive?: string;
-}
-interface IArrowButton {
-	disabled?: boolean;
-}
 export const Tours = () => {
 	const [currentPage, setCurrentPage] = useState(0);
 
