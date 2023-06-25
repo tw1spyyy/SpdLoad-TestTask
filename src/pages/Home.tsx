@@ -1,6 +1,6 @@
 import React from "react";
-import { TopPage } from "../Components/TopPage";
-import { Tours } from "../Components/Tours";
+import { TopPage } from "../Components/Home/TopPage";
+import { Tours } from "../Components/Home/Tours";
 
 export const Home = () => {
 	return (

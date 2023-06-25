@@ -7,4 +7,6 @@ import tour1 from "./tours/1.png";
 import tour2 from "./tours/2.png";
 import tour3 from "./tours/3.png";
 
-export { logo, top1, top2, top3, tour1, tour2, tour3 };
+import fav from "./fav.png";
+
+export { logo, top1, top2, top3, tour1, tour2, tour3, fav };

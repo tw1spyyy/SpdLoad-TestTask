@@ -1,14 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import { top1 } from "../static";
+import { top1 } from "../../static";
 
 export const TopPage = () => {
+	const onExploreTours = () => {
+		window.scrollTo({
+			top: 1000,
+			behavior: "smooth",
+		});
+	};
 	return (
 		<Wrapper>
 			<Subtitle>The space is waiting for</Subtitle>
 			<Title>YOU</Title>
 			<ExploreButton>
-				<div>Explore tours</div>
+				<div onClick={onExploreTours}>Explore tours</div>
 				<svg
 					width="40"
 					height="40"
@@ -19,16 +25,16 @@ export const TopPage = () => {
 					<path
 						d="M20.4572 32.9167V7.91667"
 						stroke="white"
-						stroke-width="1.2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
+						strokeWidth="1.2"
+						strokeLinecap="round"
+						strokeLinejoin="round"
 					/>
 					<path
 						d="M30.4978 22.8337L20.4578 32.917L10.4162 22.8337"
 						stroke="white"
-						stroke-width="1.2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
+						strokeWidth="1.2"
+						strokeLinecap="round"
+						strokeLinejoin="round"
 					/>
 				</svg>
 			</ExploreButton>
