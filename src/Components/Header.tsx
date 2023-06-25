@@ -24,9 +24,9 @@ export const Header = () => {
 				</NavLink>
 				<nav>
 					<HeaderMenu>
-						<li>
+						<HeaderMenuItem isActive={location.pathname === "/home"}>
 							<NavLink to="/home">Home</NavLink>
-						</li>
+						</HeaderMenuItem>
 						<li> tours</li>
 						<li> about</li>
 						<li>about </li>
@@ -66,10 +66,31 @@ const HeaderMenu = styled.ul`
 	display: flex;
 
 	& > li {
+		cursor: pointer;
 		&:not(:last-child) {
 			margin-right: 32px;
 		}
 	}
+`;
+const HeaderMenuItem = styled.li<IHeardButton>`
+	position: relative;
+	padding-bottom: 4px;
+	${({ isActive }) => {
+		if (isActive) {
+			return css`
+				&::after {
+					content: "";
+					left: 0;
+					bottom: 0;
+					right: 0;
+					width: 100%;
+					background: #fff;
+					height: 1px;
+					position: absolute;
+				}
+			`;
+		}
+	}}
 `;
 const HeardButton = styled.div<IHeardButton>`
 	cursor: pointer;

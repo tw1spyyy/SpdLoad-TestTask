@@ -1,8 +1,30 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { IPost } from "./Tours";
+import { AddToFavSvg, DeleteSvg, WhiteHeard } from "../../utils/svgs";
+import { useDispatch, useSelector } from "react-redux";
+import { onAddToFavorites } from "../../store/reducers/favorites";
+import { RootState } from "../../store";
 
-export const TourItem = ({ id, img, title, text }: IPost) => {
+interface Props {
+	tour: IPost;
+	isFavorite?: boolean;
+}
+
+interface ButtonProps {
+	isActive?: boolean;
+}
+
+export const TourItem = ({ tour, isFavorite = false }: Props) => {
+	const { id, img, title, text } = tour;
+	const dispatch = useDispatch();
+
+	const { favorites } = useSelector((state: RootState) => state.favorites);
+
+	const onAddToFav = () => {
+		dispatch(onAddToFavorites({ id, img, title, text }));
+	};
+
 	return (
 		<ToursItem>
 			<img src={img} alt="tour" />
@@ -10,32 +32,18 @@ export const TourItem = ({ id, img, title, text }: IPost) => {
 			<ToursItemText>{text}</ToursItemText>
 			<ToursItemButtons>
 				<BuyButton>buy</BuyButton>
-				<AddToFavouritesButton>
-					<svg
-						width="25"
-						height="25"
-						viewBox="0 0 25 25"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
+				{isFavorite ? (
+					<AddToFavouritesButton onClick={onAddToFav}>
+						<DeleteSvg />
+					</AddToFavouritesButton>
+				) : (
+					<AddToFavouritesButton
+						isActive={!!favorites.find((el) => el.id === id)}
+						onClick={onAddToFav}
 					>
-						<path
-							fillRule="evenodd"
-							clipRule="evenodd"
-							d="M12.261 21.3538C10.0904 20.0179 8.07111 18.4456 6.23929 16.6652C4.95144 15.3829 3.97101 13.8198 3.3731 12.0954C2.29714 8.75031 3.55393 4.92083 7.07112 3.78752C8.91961 3.19243 10.9384 3.53255 12.4961 4.70148C14.0543 3.53398 16.0725 3.19398 17.9211 3.78752C21.4383 4.92083 22.7041 8.75031 21.6281 12.0954C21.0302 13.8198 20.0498 15.3829 18.7619 16.6652C16.9301 18.4456 14.9108 20.0179 12.7402 21.3538L12.5051 21.5L12.261 21.3538Z"
-							stroke="#200E32"
-							strokeWidth="1.5"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-						/>
-						<path
-							d="M16.2393 7.55304C17.3046 7.89334 18.0615 8.84974 18.1561 9.97502"
-							stroke="#200E32"
-							strokeWidth="1.5"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-						/>
-					</svg>
-				</AddToFavouritesButton>
+						{!!favorites.find((el) => el.id === id) ? <WhiteHeard /> : <AddToFavSvg />}
+					</AddToFavouritesButton>
+				)}
 			</ToursItemButtons>
 		</ToursItem>
 	);
@@ -96,7 +104,7 @@ const BuyButton = styled.div`
 		transition: 0.2s;
 	}
 `;
-const AddToFavouritesButton = styled.div`
+const AddToFavouritesButton = styled.div<ButtonProps>`
 	display: flex;
 	width: 53px;
 	height: 53px;
@@ -111,4 +119,14 @@ const AddToFavouritesButton = styled.div`
 		background: #cdc5c5;
 		transition: 0.2s;
 	}
+	${({ isActive }) => {
+		if (isActive) {
+			return css`
+				background: #dd377d;
+				&:hover {
+					background: #fa006a;
+				}
+			`;
+		}
+	}}
 `;

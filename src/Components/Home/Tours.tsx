@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { css, styled } from "styled-components";
-import { tour1, tour2, tour3 } from "../../static";
 import { posts } from "../../utils/mockData";
 import { NextArrow, PrevArrow } from "../../utils/svgs";
 import { TourItem } from "./TourItem";
@@ -49,7 +48,7 @@ export const Tours = () => {
 				</ToursHeader>
 				<ToursContainer>
 					{posts.slice(currentPage * 3, currentPage * 3 + 3).map((el: IPost) => {
-						return <TourItem key={el.id} {...el} />;
+						return <TourItem key={el.id} tour={el} />;
 					})}
 				</ToursContainer>
 				<Dots>

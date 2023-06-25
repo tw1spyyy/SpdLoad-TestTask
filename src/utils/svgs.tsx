@@ -50,3 +50,74 @@ export const WhiteHeard = () => {
 		</svg>
 	);
 };
+
+export const ExploreSvg = () => {
+	return (
+		<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M20.4572 32.9167V7.91667"
+				stroke="white"
+				strokeWidth="1.2"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+			<path
+				d="M30.4978 22.8337L20.4578 32.917L10.4162 22.8337"
+				stroke="white"
+				strokeWidth="1.2"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+};
+
+export const AddToFavSvg = () => {
+	return (
+		<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path
+				fillRule="evenodd"
+				clipRule="evenodd"
+				d="M12.261 21.3538C10.0904 20.0179 8.07111 18.4456 6.23929 16.6652C4.95144 15.3829 3.97101 13.8198 3.3731 12.0954C2.29714 8.75031 3.55393 4.92083 7.07112 3.78752C8.91961 3.19243 10.9384 3.53255 12.4961 4.70148C14.0543 3.53398 16.0725 3.19398 17.9211 3.78752C21.4383 4.92083 22.7041 8.75031 21.6281 12.0954C21.0302 13.8198 20.0498 15.3829 18.7619 16.6652C16.9301 18.4456 14.9108 20.0179 12.7402 21.3538L12.5051 21.5L12.261 21.3538Z"
+				stroke="#200E32"
+				strokeWidth="1.5"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+			<path
+				d="M16.2393 7.55304C17.3046 7.89334 18.0615 8.84974 18.1561 9.97502"
+				stroke="#200E32"
+				strokeWidth="1.5"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+};
+export const DeleteSvg = () => {
+	return (
+		<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M19.8249 9.9682C19.8249 9.9682 19.2819 16.7032 18.9669 19.5402C18.8169 20.8952 17.9799 21.6892 16.6089 21.7142C13.9999 21.7612 11.3879 21.7642 8.77991 21.7092C7.46091 21.6822 6.63791 20.8782 6.49091 19.5472C6.17391 16.6852 5.63391 9.9682 5.63391 9.9682"
+				stroke="#1E1E1E"
+				strokeWidth="1.5"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+			<path
+				d="M21.2082 6.73969H4.25024"
+				stroke="#1E1E1E"
+				strokeWidth="1.5"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+			<path
+				d="M17.9407 6.73967C17.1557 6.73967 16.4797 6.18467 16.3257 5.41567L16.0827 4.19967C15.9327 3.63867 15.4247 3.25067 14.8457 3.25067H10.6127C10.0337 3.25067 9.5257 3.63867 9.3757 4.19967L9.1327 5.41567C8.9787 6.18467 8.3027 6.73967 7.5177 6.73967"
+				stroke="#1E1E1E"
+				strokeWidth="1.5"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+};

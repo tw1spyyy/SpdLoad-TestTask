@@ -3,14 +3,28 @@ import styled from "styled-components";
 import { TourItem } from "../Home/TourItem";
 import { posts } from "../../utils/mockData";
 import { IPost } from "../Home/Tours";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store";
+import { onClearAll } from "../../store/reducers/favorites";
 
 export const FavContainer = () => {
+	const { favorites } = useSelector((state: RootState) => state.favorites);
+
+	const dispatch = useDispatch();
+
+	const onClearFavorites = () => {
+		if (favorites.length > 0)
+			if (window.confirm("are u sure u want to delete all posts?")) {
+				dispatch(onClearAll());
+			}
+	};
+
 	return (
 		<Wrapper>
-			<ClearButton>Clear all</ClearButton>
+			<ClearButton onClick={onClearFavorites}>Clear all</ClearButton>
 			<ToursContainer>
-				{posts.slice(0, 2).map((el: IPost) => {
-					return <TourItem key={el.id} {...el} />;
+				{favorites.map((el: IPost) => {
+					return <TourItem key={el.id} isFavorite tour={el} />;
 				})}
 			</ToursContainer>
 		</Wrapper>
@@ -33,7 +47,8 @@ const ClearButton = styled.div`
 	cursor: pointer;
 `;
 const ToursContainer = styled.div`
-	display: flex;
-	gap: 24px;
-	margin-bottom: 40px;
+	display: grid;
+	grid-gap: 24px;
+	grid-template-columns: repeat(3, 1fr);
+	margin-bottom: 100px;
 `;

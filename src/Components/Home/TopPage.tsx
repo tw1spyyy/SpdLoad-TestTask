@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { top1 } from "../../static";
+import { ExploreSvg } from "../../utils/svgs";
 
 export const TopPage = () => {
 	const onExploreTours = () => {
 		window.scrollTo({
-			top: 1000,
+			top: 900,
 			behavior: "smooth",
 		});
 	};
@@ -15,28 +16,7 @@ export const TopPage = () => {
 			<Title>YOU</Title>
 			<ExploreButton>
 				<div onClick={onExploreTours}>Explore tours</div>
-				<svg
-					width="40"
-					height="40"
-					viewBox="0 0 40 40"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M20.4572 32.9167V7.91667"
-						stroke="white"
-						strokeWidth="1.2"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-					/>
-					<path
-						d="M30.4978 22.8337L20.4578 32.917L10.4162 22.8337"
-						stroke="white"
-						strokeWidth="1.2"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-					/>
-				</svg>
+				<ExploreSvg />
 			</ExploreButton>
 		</Wrapper>
 	);
